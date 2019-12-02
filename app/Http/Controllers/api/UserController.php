@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\User;
 use Log;
+use Auth;
 
 class UserController extends Controller
 {
@@ -17,6 +18,10 @@ class UserController extends Controller
         ];
  
         if (auth()->attempt($credentials)) {
+            $user = User::find(Auth::user()->id);
+            $user->firebase_token = $request->firebase_token;
+            $user->save();
+
             $token = auth()->user()->createToken('FaleComOMedico')->accessToken;
             return response()->json(['token' => $token], 200);
         } else {
