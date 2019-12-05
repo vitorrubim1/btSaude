@@ -36,4 +36,5 @@ Route::group(['middleware' => 'auth:api'], function(){
     Route::get('call', 'api\CallController@index');
     Route::get('call/{id}', 'api\CallController@show');
     Route::post('call', 'api\CallController@store');
+    Route::get("notification/toggle/{status}", "api\NotificationController@toggle");
 });
