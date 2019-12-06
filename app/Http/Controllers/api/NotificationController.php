@@ -10,10 +10,7 @@ use Auth;
 
 class NotificationController extends Controller
 {
-    public function toggle($status){
-        if(!is_numeric($status) || $status !== 1 || $status !== 2){
-            return response()->json(["error" => "Bad Request"], 400);
-        }
+    public function toggle($status){        
         User::where("id", Auth::user()->id)->update(["notification_status" => $status]);
         return response(null, 204);
     }
