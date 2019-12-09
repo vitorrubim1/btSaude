@@ -23,7 +23,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::post('test',function(Request $request){
-    $patient = json_decode($request->patient);
+    $patient = (array)json_decode($request->patient);
 
     Log::info($patient);
 
