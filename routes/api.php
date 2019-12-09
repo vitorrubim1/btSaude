@@ -24,8 +24,11 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::post('test',function(Request $request){
     Log::info($request->all());
+    $patient = json_decode($request->patient);
+
     $call = new Call;
-    $call->patient_id = $request->patient_id;
+    $call->patient_id = $patient["patient_id"];
+    $call->patient_name = trim($patient["name"]);
     $call->profession = $request->profession;
     $call->opentok_session = $request->opentok_session;
     $call->opentok_token = $request->opentok_token;
