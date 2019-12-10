@@ -19,7 +19,8 @@
                                     <thead>
                                         <tr>
                                             <th>ID</th>
-                                            <th></th>
+                                            <th>Paciente</th>
+                                            <th>Médico</th>
                                         </tr>
                                     </thead>
                                 
@@ -27,7 +28,9 @@
                                     <tbody>
                                         @foreach($records as $record)
                                         <tr>
-                                            <td>{{$record->id}}</td>                                           
+                                            <td>{{$record->id}}</td> 
+                                            <td>{{$record->patient_name}}</td> 
+                                            <td>{{$record->doctor->name}}</td>                                           
                                         </tr>
                                         @endforeach
                                     </tbody>

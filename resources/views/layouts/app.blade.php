@@ -24,6 +24,9 @@
   </script>
         <!-- App favicon -->
         <link rel="shortcut icon" href="assets/images/favicon.ico">
+        <!-- Datatables css -->
+        <link href="{{url("assets/css/vendor/dataTables.bootstrap4.css")}}" rel="stylesheet" type="text/css" />
+        <link href="{{url("assets/css/vendor/responsive.bootstrap4.css")}}" rel="stylesheet" type="text/css" />
 
         <!-- App css -->
         <link href="{{url("assets/css/icons.min.css")}}" rel="stylesheet" type="text/css" />
@@ -266,6 +269,8 @@
 
         <div class="rightbar-overlay"></div>
         <!-- /Right-bar -->
+        
+        
 
 
         <!-- bundle -->
@@ -278,6 +283,14 @@
         {{-- @auth
         <script src="{{ asset('js/enable-push.js') }}" defer></script>
         @endauth --}}
+        <!-- Datatables js -->
+        <script src="{{url("assets/js/vendor/jquery.dataTables.min.js")}}"></script>
+        <script src="{{url("assets/js/vendor/dataTables.bootstrap4.js")}}"></script>
+        <script src="{{url("assets/js/vendor/dataTables.responsive.min.js")}}"></script>
+        <script src="{{url("assets/js/vendor/responsive.bootstrap4.min.js")}}"></script>
+
+        <!-- Datatable Init js -->
+        <script src="{{url("assets/js/pages/demo.datatable-init.js")}}"></script>
         @yield('myscript')
         <script>
             // Enable pusher logging - don't include this in production
