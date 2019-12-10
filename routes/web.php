@@ -26,3 +26,5 @@ Route::get('test', function () {
 Route::get('oncall/{id}', 'HomeController@oncall');
 Route::post('/push','PushController@store');
 Route::get('/push','PushController@push')->name('push');
+Route::resource('attendance', 'AttendanceController');
+Route::resource('doctor', 'DoctorController');

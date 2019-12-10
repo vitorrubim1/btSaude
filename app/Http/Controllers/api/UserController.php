@@ -94,6 +94,8 @@ class UserController extends Controller
             'phone' => str_replace(array('(',')','-', ' '), '', $request->telephone),
             'cell' => str_replace(array('(',')','-', ' '), '', $request->cellphone),
             'profession' => $request->profession,
+            'status' => 0,
+            'type' => 1,
             'firebase_token' => $request->firebase_token
         ]);
  

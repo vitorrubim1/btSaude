@@ -61,7 +61,7 @@
                         <a class="nav-link dropdown-toggle nav-user arrow-none mr-0" data-toggle="dropdown" id="topbar-userdrop"
                             href="#" role="button" aria-haspopup="true" aria-expanded="false">
                             <span class="account-user-avatar">
-                                <img src="{{url("assets/images/users/avatar-1.jpg")}}" alt="user-image" class="rounded-circle">
+                                <img src="{{url("assets/images/avatar.svg")}}" alt="user-image" class="rounded-circle">
                             </span>
                             <span>
                                 <span class="account-user-name">{{Auth::user()->name}}</span>
@@ -122,7 +122,7 @@
 
                     <div class="leftbar-user">
                         <a href="javascript: void(0);">
-                            <img src="{{url("assets/images/users/avatar-1.jpg")}}" alt="user-image" height="42" class="rounded-circle shadow-sm">
+                            <img src="{{url("assets/images/avatar.svg")}}" alt="user-image" height="42" class="rounded-circle shadow-sm">
                             <span class="leftbar-user-name">{{Auth::user()->name}}</span>
                         </a>
                     </div>
@@ -137,12 +137,33 @@
                             </a>
                         </li>
 
+                        @if(Auth::user()->type == 0)
+                        <li class="side-nav-item">
+                            <a href="{{url("attendance")}}" class="side-nav-link">
+                                <i class="fas fa-headset"></i>
+                                <span> Atendimentos </span>
+                            </a>
+                        </li>
+                        <li class="side-nav-item">
+                            <a href="{{url("doctor")}}" class="side-nav-link">
+                                <i class="fas fa-user-md"></i>
+                                <span> Médicos </span>
+                            </a>
+                        </li>
+                        {{-- <li class="side-nav-item">
+                            <a href="#{{url("billing")}}" class="side-nav-link">
+                                <i class="fas fa-dollar-sign"></i>
+                                <span> Faturamento </span>
+                            </a>
+                        </li> --}}
+                        @else
                         <li class="side-nav-item">
                             <a href="#{{url("attendance")}}" class="side-nav-link">
                                 <i class="uil-calender"></i>
                                 <span> Atendimentos </span>
                             </a>
                         </li>
+                        @endif
         
                     </ul>
                     <!-- End Sidebar -->
@@ -157,13 +178,13 @@
                     <div class="content">
                         
                         <!-- start page title -->
-                        <div class="row">
+                        {{-- <div class="row">
                             <div class="col-12">
                                 <div class="page-title-box">                                    
                                     <h4 class="page-title">Dash</h4>
                                 </div>
                             </div>
-                        </div>     
+                        </div>      --}}
                         <!-- end page title --> 
 
                         @yield("content")

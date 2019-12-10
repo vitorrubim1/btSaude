@@ -3,7 +3,7 @@
 use Illuminate\Http\Request;
 use App\Call;
 use App\Events\Alert;
-use Log;
+// use Log;
 /*
 |--------------------------------------------------------------------------
 | API Routes
