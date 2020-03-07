@@ -19,6 +19,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('dashboard', 'HomeController@dashboard');
+
 Route::get('test', function () {
     event(new App\Events\Alert('Someone'));
     return "Event has been sent!";
@@ -28,3 +29,6 @@ Route::post('/push','PushController@store');
 Route::get('/push','PushController@push')->name('push');
 Route::resource('attendance', 'AttendanceController');
 Route::resource('doctor', 'DoctorController');
+
+//i make
+Route::resource('specialties', 'SpecialtiesController'); //

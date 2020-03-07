@@ -16,4 +16,8 @@ class Call extends Model
     public function doctor() {
         return $this->belongsTo("App\User", "doctor_id", "id");
     }
+
+    public function specialties() {
+        return $this->belongsTo("App\User", "name", "id");
+    }
 }

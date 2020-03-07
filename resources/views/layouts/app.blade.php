@@ -153,6 +153,14 @@
                                 <span> Médicos </span>
                             </a>
                         </li>
+
+                        <li class="side-nav-item">
+                            <a href="{{url("specialties")}}" class="side-nav-link">
+                                <i class="fas fa-stethoscope"></i>
+                                <span> Especialidades </span>
+                            </a>
+                        </li>
+
                         {{-- <li class="side-nav-item">
                             <a href="#{{url("billing")}}" class="side-nav-link">
                                 <i class="fas fa-dollar-sign"></i>
@@ -166,6 +174,7 @@
                                 <span> Atendimentos </span>
                             </a>
                         </li>
+                        
                         @endif
         
                     </ul>

@@ -21,6 +21,8 @@ class User extends Authenticatable
     const PROFESSION_NUTRI = 3;
 
 
+
+
     /**
      * The attributes that are mass assignable.
      *
@@ -30,6 +32,7 @@ class User extends Authenticatable
         'name', 'email', 'password','last_name','cpf','phone','profession','photo_front','photo_back','opentok_session','opentok_token', 'firebase_token', 'status', 'type'
     ];
 
+    
     /**
      * The attributes that should be hidden for arrays.
      *

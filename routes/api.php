@@ -25,6 +25,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::post('test',function(Request $request){
 
     Log::info($request->all());
+    
 
     $call = new Call;
     $call->patient_id = $request->patient_id;

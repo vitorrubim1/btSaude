@@ -85,8 +85,8 @@
                                     <div class="form-group mb-3">
                                         <label for="simpleinput">Status</label>
                                         <select name="status" id="" class="form-control">
-                                            <option value="1" {{$entity->status == 1 ? 'selected' : ''}}>Ativo</option>
-                                            <option value="0" {{$entity->status == 0 ? 'selected' : ''}}>Inativo</option>
+                                            <option value="1" {{@$entity->status == 1 ? 'selected' : ''}}>Ativo</option>
+                                            <option value="0" {{@$entity->status == 0 ? 'selected' : ''}}>Inativo</option>
                                         </select>
                                     </div>
                                 </div>
