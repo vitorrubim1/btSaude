@@ -6,9 +6,9 @@
         <div class="page-title-box">
             <div class="page-title-right">
                 @if(isset($show))
-                <a href="{{url("specialties/".$entity->id."/edit")}}" class="btn btn-info"><i class="fas fa-edit "></i> Editar</a>
+                <a href="{{url("specialtie/".$entity->id."/edit")}}" class="btn btn-info"><i class="fas fa-edit "></i> Editar</a>
                 @endif
-                <a href="{{url("specialties")}}" class="btn btn-info"><i class="fas fa-arrow-left "></i> Voltar</a>
+                <a href="{{url("specialtie")}}" class="btn btn-info"><i class="fas fa-arrow-left "></i> Voltar</a>
             </div>
             <h4 class="page-title">Especialidades</h4>
         </div>
@@ -20,8 +20,8 @@
                         {{-- <h4 class="header-title">Usuários</h4> --}}
                         <div class="row">
                     <div class="col-lg-12">
-                        {{-- <form method="POST" action="{{url("specialties")}}" enctype="multipart/form-data"> --}}
-                        <form method="POST" action="{{ isset($entity) ? route('specialties.update',$entity->id) : route('specialties.store') }}" enctype="multipart/form-data">
+                        {{-- <form method="POST" action="{{url("specialtie")}}" enctype="multipart/form-data"> --}}
+                        <form method="POST" action="{{ isset($entity) ? route('specialtie.update',$entity->id) : route('specialtie.store') }}" enctype="multipart/form-data">
                         @if( isset($entity) ) <input type="hidden" name="_method" value="PUT" /> @endif    
                             @csrf
                             <div class="row">

@@ -155,7 +155,7 @@
                         </li>
 
                         <li class="side-nav-item">
-                            <a href="{{url("specialties")}}" class="side-nav-link">
+                            <a href="{{url("specialtie")}}" class="side-nav-link">
                                 <i class="fas fa-stethoscope"></i>
                                 <span> Especialidades </span>
                             </a>

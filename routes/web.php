@@ -31,4 +31,4 @@ Route::resource('attendance', 'AttendanceController');
 Route::resource('doctor', 'DoctorController');
 
 //i make
-Route::resource('specialties', 'SpecialtiesController'); //
+Route::resource('specialtie', 'SpecialtieController'); //
