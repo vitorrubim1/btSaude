@@ -28,7 +28,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group mb-3">
                                         <label for="simpleinput">Nome</label>
-                                        <input type="text" class="form-control " value="{{ @$entity->name }}">
+                                        <input type="text" class="form-control" name="name">
                                     </div>
                                 </div>      
                             </div>                          

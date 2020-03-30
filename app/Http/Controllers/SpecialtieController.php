@@ -14,17 +14,16 @@ class SpecialtieController extends Controller
      * @return \Illuminate\Http\Response
      */
     public $specialtie = array(
-        Specialtie::SPECIALTIE_CARD=> 'Cardiologista',
     );
     public $status = array(
         //para ver se esta ativo ou n
         Specialtie::STATUS_ACTIVE => '1', //ativo
         Specialtie::STATUS_INACTIVE => '0'
     );
-    public function index()
+    public function index(Request $request)
     {   
 
-        //$data['name'] = $this->name;
+        $name = $request->input('name');
         $data['status'] = $this->status;
         $data['records'] = Specialtie::where("status",1)->get();
         return view('specialtie.index', $data);
@@ -35,13 +34,11 @@ class SpecialtieController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
+        // $data = $request->name;
 
-        $data['name'] = $this->specialtie;
-        $data['status'] = $this->status;
-
-
+        // Specialtie::create($data);
 
         return view('specialtie.create');
     }
@@ -55,19 +52,20 @@ class SpecialtieController extends Controller
     public function store(Request $request)
     {
 
-        $this -> validate($request,[
-            //Aqui vai a verificação de campos vazios 
+        // $this -> validate($request,[
+        //     //Aqui vai a verificação de campos vazios 
 
-            'name' => 'required',
-            'status' => 'required',
-        ],[
-            'name.required' => 'O nome da especialidade do médico é Obrigatória!',
-            'status.required' => 'O status é obrigatório',
-        ]);
+        //     'name' => 'required',
+        //     'status' => 'required',
+        // ],[
+        //     'name.required' => 'O nome da especialidade do médico é Obrigatória!',
+        //     'status.required' => 'O status é obrigatório',
+        // ]);
+
+        $name = $request->input('name');
 
         $specialtie = new \App\Specialtie();
-        $specialtie->status = $nameFile;
-        dd($data); exit();
+        $specialtie->status = "teste";
 
         $specialtie->save();
 
@@ -85,7 +83,7 @@ class SpecialtieController extends Controller
     {
         $data['show']=true;
         $data['entity']=Specialtie::find($id);
-        //$data['name'] = $this->name;
+        $data['name'] = $this->specialtie;
         $data['status'] = $this->status;
         
         return view("specialtie.create",$data);
@@ -100,8 +98,8 @@ class SpecialtieController extends Controller
     public function edit($id)
     {
         $data['entity']=Specialtie::find($id);
-        //$data['name'] = $this->name;
-        $data['status'] = $this->status;
+        $data=$this->specialtie ;
+        $data=$this->status;
         return view("specialtie.create",$data);
         
     }
